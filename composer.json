@@ -1,0 +1,25 @@
+{
+  "name": "backupmigrate/wordpress",
+  "description": "Backup and Migrate WordPress Plugin",
+  "autoload": {
+    "psr-4": {
+      "BackupMigrate\\WordPress\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ryan Duff"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/backupmigrate/backup_migrate_core"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "backupmigrate/core": "dev-master",
+    "psr/log": "dev-master"
+  }
+}
