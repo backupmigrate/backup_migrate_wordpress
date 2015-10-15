@@ -65,7 +65,7 @@ class BAM_WordPress {
 		static $bam = NULL;
 
 		// If the static cached object has not been loaded.
-		if ($bam === NULL) {
+		if ( $bam === NULL ) {
 
 			// Create the environment services.
 
@@ -103,13 +103,13 @@ class BAM_WordPress {
 
 	function bam_override_service_locator( $services ) {
 
-		$services->add('TempFileAdapter',
-			new \BackupMigrate\Core\File\TempFileAdapter('/tmp/', 'bam')
+		$services->add( 'TempFileAdapter',
+			new \BackupMigrate\Core\File\TempFileAdapter( '/tmp/', 'bam' )
 		);
 
 
-		$services->add('TempFileManager',
-			new \BackupMigrate\Core\File\TempFileManager($services->get('TempFileAdapter'))
+		$services->add( 'TempFileManager',
+			new \BackupMigrate\Core\File\TempFileManager( $services->get( 'TempFileAdapter' ) )
 		);
 
 		return $services;
@@ -129,7 +129,7 @@ class BAM_WordPress {
 		$db = new \BackupMigrate\Core\Source\MySQLiSource( new Config( $connection ) );
 		$plugins->add('db', $db);
 
-		$plugins->add('download', new \BackupMigrate\WordPress\Destination\WordPressBrowserDownloadDestination());
+		$plugins->add( 'download', new \BackupMigrate\WordPress\Destination\WordPressBrowserDownloadDestination() );
 
 		return $plugins;
 
