@@ -104,7 +104,7 @@ class BAM_WordPress {
 	function bam_override_service_locator( $services ) {
 
 		$services->add( 'TempFileAdapter',
-			new \BackupMigrate\Core\File\TempFileAdapter( '/tmp/', 'bam' )
+			new \BackupMigrate\Core\File\TempFileAdapter( get_temp_dir(), 'bam' )
 		);
 
 
