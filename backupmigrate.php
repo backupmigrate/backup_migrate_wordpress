@@ -55,7 +55,9 @@ class BAM_WordPress {
 
 		$bam = $this->backup_migrate_get_service_object();
 
-		$bam->backup( 'db', 'download' );
+		require_once( 'admin/backupmigrate.php' );
+
+		// $bam->backup( 'db', 'download' );
 
 	}
 
