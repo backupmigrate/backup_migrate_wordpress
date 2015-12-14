@@ -1,5 +1,13 @@
 <?php
 
+// Run backup if nonce validates
+if ( isset( $_REQUEST['bam_simple_backup'] ) && wp_verify_nonce( $_REQUEST['bam_simple_backup'], 'bam_simple_backup' ) ) {
+
+	$bam = backup_migrate_get_service_object();
+	$bam->backup( 'db', 'download' );
+
+}
+
 add_action('admin_menu', 'bam_add_admin_menu');
 function bam_add_admin_menu() {
 
