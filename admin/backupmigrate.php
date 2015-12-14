@@ -4,8 +4,8 @@ add_action('admin_menu', 'bam_add_admin_menu');
 function bam_add_admin_menu() {
 
 	add_management_page(
-			__( 'Backup and Migrate', 'bam' ),
-			__( 'Backup and Migrate', 'bam' ),
+			__( 'Backup and Migrate', 'backupmigrate' ),
+			__( 'Backup and Migrate', 'backupmigrate' ),
 			'manage_options',
 			'bam-admin-page',
 			'bam_admin_page'
